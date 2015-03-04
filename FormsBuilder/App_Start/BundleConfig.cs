@@ -26,6 +26,18 @@ namespace FormsBuilder
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/spacelab/bootstrap.min.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                      "~/Scripts/angular.js",
+                      "~/Scripts/angular-ui-router.js",
+                      "~/Scripts/angular-animate.js",
+                      "~/App/app.js",
+                      "~/App/Services/angular-drag-and-drop-lists.min.js")
+                      .IncludeDirectory("~/App/Routes", "*-main.js")
+                      .IncludeDirectory("~/App/Directives", "*-main.js")
+                      .IncludeDirectory("~/App/Factory", "*-main.js")
+                      .IncludeDirectory("~/App/Controller", "*-main.js")
+                      );
         }
     }
 }
